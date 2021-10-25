@@ -1,15 +1,55 @@
 .App {
+  margin: 0;
   text-align: center;
+  font-family: "Cairo", sans-serif;
+  line-height: 1.6
 }
 
-.hero {
-  height:500px;
-  width:500px;
-  background-repeat: no-repeat;
-  background-image:  url("https://techrevieweg.com/wp-content/uploads/2021/07/x-780x470.jpg");
-  filter: grayscale(70%) brightness(80%) contrast(105%);
-  display: block;
-  padding-left:280px;
-  padding-top:50px;
-  color: #eaeaea;
+.navbar {
+  background-color: white;
 }
+
+#homeLogo {
+  text-align: right;
+  padding-left: 1%;
+  color: red;
+  font-weight: 900;
+  font-size: 150%;
+}
+
+#lang {
+  color: red;
+  margin-right: 12%;
+  font-weight: 700;
+  font-size: 120%;
+}
+
+.navLogo {
+  margin-left: 3%;
+  max-width: 15%;
+}
+#homeButtons {
+  border-radius: 30px;
+  margin-right: 2%;
+  font-size: 130%;
+  font-weight: 600;
+  padding: 0.5% 1.5%;
+}
+
+#linkItem,
+#collasible-nav-dropdown {
+  color: black;
+  font-size: 100%;
+  font-weight: 700;
+}
+
+#linkItem {
+  margin: 1% 8%;
+}
+
+#footer {
+  background-color: black;
+  color: white;
+}
+
+
