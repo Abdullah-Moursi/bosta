@@ -18,7 +18,7 @@ const Footer = () => {
       <MDBContainer fluid className="text-center text-md-right">
         <MDBRow >
           <MDBCol style={{ marginTop: "1.5%" }} md="3">
-            <h5 style={{ color: "red" }} className="title">
+            <h5 style={{ color: "red" }} className="footerTitle">
               عن بوسطة
             </h5>
             <ul>
@@ -34,7 +34,7 @@ const Footer = () => {
             </ul>
           </MDBCol>
           <MDBCol style={{ marginTop: "1.5%" }} md="3">
-            <h5 style={{ color: "red" }} className="title">
+            <h5 style={{ color: "red" }} className="footerTitle">
               الشحنات
             </h5>
             <ul>
@@ -50,7 +50,7 @@ const Footer = () => {
             </ul>
           </MDBCol>
           <MDBCol style={{ marginTop: "1.5%" }} md="4">
-            <h5 className="title">
+            <h5 className="footerTitle">
               بوسطة
               <span>
                 <img

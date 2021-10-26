@@ -2,7 +2,9 @@ import React from "react";
 import "../App.css";
 import header from "../../src/header.jpg";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const Hero = () => {
   return (
@@ -34,6 +36,9 @@ const Hero = () => {
             <br />
             تأخير ولا تعب في الفواتير
           </Card.Text>
+
+
+
           <div
             style={{
               marginTop: "3.5%",
@@ -42,24 +47,22 @@ const Hero = () => {
             <Button
               href="https://bosta.co/contact-shipping-sales/?lang=ar"
               id="homeButtons"
-              variant="outline-primary"
-              // style={{
-              //   color: "white",
-              //   borderStyle: "solid",
-              //   borderWidth: "2px",
-              //   backgroundColor: "transparent",
-              //   borderColor: "white"
-              // }}
+        
+              style={{
+                borderStyle: "solid",
+                borderWidth: "2px",
+                backgroundColor: "transparent",
+                borderColor: "white",
+              }}
             >
               كلم المبيعات
             </Button>
             <Button
-              // style={{
-              //   backgroundColor: "red",
-              // }}
+              style={{
+                backgroundColor: "red",
+              }}
               href="https://business.bosta.co/signup"
               id="homeButtons"
-              variant="danger"
             >
               ابدأ مع بوسطـة
             </Button>{" "}

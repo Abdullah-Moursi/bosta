@@ -29,11 +29,13 @@
   max-width: 15%;
 }
 #homeButtons {
+  font-family: "Cairo", sans-serif;
+  color: white;
   border-radius: 30px;
   margin-right: 2%;
-  font-size: 130%;
+  font-size: 120%;
   font-weight: 600;
-  padding: 0.5% 1.5%;
+  padding: 0.55% 2.1%;
 }
 
 #linkItem,
@@ -52,4 +54,9 @@
   color: white;
 }
 
+.footerTitle {
+  margin: 5% 0;
+  font-size: large;
+  font-weight: 700;
+}
 
