@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import logo from "../../src/logo.png";
+import Stack from "react-bootstrap/Stack";
 
 import "../App.css";
 
@@ -24,7 +25,17 @@ const Header = () => {
             </Nav.Link>
             <NavDropdown title="تتبع شحنتك" id="collasible-nav-dropdown">
               <h3>تتبع شحنتك</h3>
-              <Form>
+
+
+
+              <Stack direction="horizontal" gap={4}>
+  <Form.Control className="me-auto" placeholder="Add your item here..." />
+  <Button variant="secondary">Submit</Button>
+</Stack>
+
+
+
+              {/* <Form>
                 <Row className="align-items-center">
                   <Col xs="auto" className="my-1">
                     <Button type="submit">Submit</Button>
@@ -40,14 +51,13 @@ const Header = () => {
                     />
                   </Col>
                 </Row>
-              </Form>
+              </Form> */}
             </NavDropdown>
           </Nav>
           <Nav>
             {" "}
             <Nav.Link id="linkItem" href="https://bosta.co/ar/contact-sales/">
-               كلم 
-               المبيعات
+              كلم المبيعات
             </Nav.Link>
             <Nav.Link id="linkItem" href="https://bosta.co/ar/pricing/">
               {" "}
