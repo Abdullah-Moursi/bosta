@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
@@ -10,14 +10,32 @@ import Table from "react-bootstrap/Table";
 import question from "../../src/question.png";
 import Image from "react-bootstrap/Image";
 import Button from "@mui/material/Button";
+import Canceled from "../../src/canceled.png";
+import Delivered from "../../src/delivered.png";
+import Pending from "../../src/pending.png";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import { color } from "@mui/system";
 
 const Track = () => {
+  const [orderStatus, setOrderStatus] = useState("");
+
   return (
     <div>
       <li>
         <Link to="/">home</Link>
       </li>
       <Header />
+      <ButtonGroup aria-label="Basic example">
+        <Button onClick={() => setOrderStatus("delivered")} variant="secondary">
+          delivered
+        </Button>
+        <Button onClick={() => setOrderStatus("pending")} variant="secondary">
+          pending
+        </Button>
+        <Button onClick={() => setOrderStatus("canceled")} variant="secondary">
+          canceled
+        </Button>
+      </ButtonGroup>
       <Container style={{ marginTop: "4%", marginBottom: "2%" }}>
         <Row style={{ border: "solid 1px", borderColor: "grey" }}>
           <Col>
@@ -38,7 +56,21 @@ const Track = () => {
           <Col>
             {" "}
             <h6> 6545465 رقم الشحنة</h6>
-            <h5>تم تسليم الشحنة</h5>
+            <h5
+              id={
+                orderStatus === "delivered"
+                  ? "green"
+                  : orderStatus === "pending"
+                  ? "yellow"
+                  : "red"
+              }
+            >
+              {orderStatus === "delivered"
+                ? "تم تسليم الشحنة"
+                : orderStatus === "pending"
+                ? "لم يتم تسليم الشحنة"
+                : "تم إلغاء الشحنة"}
+            </h5>
           </Col>
         </Row>
         <Row
@@ -48,9 +80,37 @@ const Track = () => {
             borderColor: "grey",
           }}
         >
-          <Row style={{ justifyContent: "center" }}> progress bar </Row>
+          <Row style={{ justifyContent: "center" }}>
+            <Image
+              src={
+                orderStatus === "delivered"
+                  ? Delivered
+                  : orderStatus === "pending"
+                  ? Pending
+                  : Canceled
+              }
+            />
+          </Row>
           <Col>تم التسليم</Col>
-          <Col>الشحنة خرجت للتسليم</Col>
+          <Col>
+            <h6>الشحنة خرجت للتسليم</h6>
+
+            <p
+              id={
+                orderStatus === "delivered"
+                  ? "green"
+                  : orderStatus === "pending"
+                  ? "yellow"
+                  : "red"
+              }
+            >
+              {orderStatus === "delivered"
+                ? `space`
+                : orderStatus === "pending"
+                ? "العميل غير متواجد في العنوان"
+                : "تم إلغاء الشحنة من التاجر"}
+            </p>
+          </Col>
           <Col>تم إستلام الشحنة من التاجر</Col>
           <Col>تم إنشاء الشحنة</Col>
         </Row>
@@ -61,9 +121,8 @@ const Track = () => {
             {" "}
             <h5>عنوان التسليم</h5>
             <Container fluid>
-              <Row
+              <Row id = 'address'
                 style={{
-                  backgroundColor: "lightslategray",
                   border: "solid gray 1px",
                 }}
               >
@@ -82,7 +141,7 @@ const Track = () => {
                     style={{
                       backgroundColor: "red",
                       padding: "3% 16%",
-                      marginBottom: "8%"
+                      marginBottom: "8%",
                     }}
                     variant="danger"
                   >
@@ -127,7 +186,21 @@ const Track = () => {
                   <td>مدينة نصر</td>
                 </tr>
                 <tr>
-                  <td>تم التسليم</td>
+                  <td
+                    id={
+                      orderStatus === "delivered"
+                        ? "green"
+                        : orderStatus === "pending"
+                        ? "yellow"
+                        : "red"
+                    }
+                  >
+                    {orderStatus === "delivered"
+                      ? `تم التسليم`
+                      : orderStatus === "pending"
+                      ? "العميل غير متواجد في العنوان"
+                      : "تم إلغاء الشحنة من التاجر"}
+                  </td>
                   <td>12:30 pm</td>
                   <td>05/04/2020</td>
                   <td>مدينة نصر</td>
