@@ -6,7 +6,6 @@ import Container from "react-bootstrap/Container";
 import logo from "../../src/logo.png";
 
 import "../App.css";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   const [search, setSearch] = useState("");
