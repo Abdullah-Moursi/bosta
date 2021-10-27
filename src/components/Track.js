@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../App.css";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
@@ -13,10 +14,18 @@ import Button from "@mui/material/Button";
 import Canceled from "../../src/canceled.png";
 import Delivered from "../../src/delivered.png";
 import Pending from "../../src/pending.png";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 const Track = () => {
   const [orderStatus, setOrderStatus] = useState("");
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://tracking.bosta.co/shipments/track/9442984")
+      .then((response) => setData(response.data));
+    setOrderStatus(data.CurrentStatus.state);
+  }, []);
+  console.log(data);
 
   return (
     <div>
@@ -24,17 +33,6 @@ const Track = () => {
         <Link to="/">home</Link>
       </li>
       <Header />
-      <ButtonGroup aria-label="Basic example">
-        <Button onClick={() => setOrderStatus("delivered")} variant="secondary">
-          delivered
-        </Button>
-        <Button onClick={() => setOrderStatus("pending")} variant="secondary">
-          pending
-        </Button>
-        <Button onClick={() => setOrderStatus("canceled")} variant="secondary">
-          canceled
-        </Button>
-      </ButtonGroup>
       <Container style={{ marginTop: "4%", marginBottom: "2%" }}>
         <Row style={{ border: "solid 1px", borderColor: "grey" }}>
           <Col>
@@ -57,18 +55,18 @@ const Track = () => {
             <h6> 6545465 رقم الشحنة</h6>
             <h5
               id={
-                orderStatus === "delivered"
+                orderStatus === "DELIVERED"
                   ? "green"
-                  : orderStatus === "pending"
-                  ? "yellow"
-                  : "red"
+                  : orderStatus === "DELIVERED_TO_SENDER"
+                  ? "red"
+                  : "yellow"
               }
             >
-              {orderStatus === "delivered"
+              {orderStatus === "DELIVERED"
                 ? "تم تسليم الشحنة"
-                : orderStatus === "pending"
-                ? "لم يتم تسليم الشحنة"
-                : "تم إلغاء الشحنة"}
+                : orderStatus === "DELIVERED_TO_SENDER"
+                ? "تم إلغاء الشحنة"
+                : "لم يتم تسليم الشحنة"}
             </h5>
           </Col>
         </Row>
@@ -82,11 +80,11 @@ const Track = () => {
           <Row style={{ justifyContent: "center" }}>
             <Image
               src={
-                orderStatus === "delivered"
+                orderStatus === "DELIVERED"
                   ? Delivered
-                  : orderStatus === "pending"
-                  ? Pending
-                  : Canceled
+                  : orderStatus === "DELIVERED_TO_SENDER"
+                  ? Canceled
+                  : Pending
               }
             />
           </Row>
@@ -96,18 +94,18 @@ const Track = () => {
 
             <p
               id={
-                orderStatus === "delivered"
+                orderStatus === "DELIVERED"
                   ? "green"
-                  : orderStatus === "pending"
-                  ? "yellow"
-                  : "red"
+                  : orderStatus === "DELIVERED_TO_SENDER"
+                  ? "red"
+                  : "yellow"
               }
             >
-              {orderStatus === "delivered"
+              {orderStatus === "DELIVERED"
                 ? `space`
-                : orderStatus === "pending"
-                ? "العميل غير متواجد في العنوان"
-                : "تم إلغاء الشحنة من التاجر"}
+                : orderStatus === "DELIVERED_TO_SENDER"
+                ? "تم إلغاء الشحنة من التاجر"
+                : "العميل غير متواجد في العنوان"}
             </p>
           </Col>
           <Col>تم إستلام الشحنة من التاجر</Col>
@@ -188,18 +186,18 @@ const Track = () => {
                 <tr>
                   <td
                     id={
-                      orderStatus === "delivered"
+                      orderStatus === "DELIVERED"
                         ? "green"
-                        : orderStatus === "pending"
-                        ? "yellow"
-                        : "red"
+                        : orderStatus === "DELIVERED_TO_SENDER"
+                        ? "red"
+                        : "yellow"
                     }
                   >
-                    {orderStatus === "delivered"
+                    {orderStatus === "DELIVERED"
                       ? `تم التسليم`
-                      : orderStatus === "pending"
-                      ? "العميل غير متواجد في العنوان"
-                      : "تم إلغاء الشحنة من التاجر"}
+                      : orderStatus === "DELIVERED_TO_SENDER"
+                      ? "تم إلغاء الشحنة من التاجر"
+                      : "العميل غير متواجد في العنوان"}
                   </td>
                   <td>12:30 pm</td>
                   <td>05/04/2020</td>

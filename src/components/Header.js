@@ -20,7 +20,6 @@ const Header = () => {
     e.preventDefault();
     setQuery(search);
     setSearch("");
-    console.log(query)
   };
   return (
     <Navbar className="navbar" sticky="top" collapseOnSelect expand="lg">
