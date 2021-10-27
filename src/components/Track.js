@@ -17,13 +17,13 @@ import Pending from "../../src/pending.png";
 
 const Track = () => {
   const [orderStatus, setOrderStatus] = useState("");
-  const [data, setData] = useState("");
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
       .get("https://tracking.bosta.co/shipments/track/9442984")
       .then((response) => setData(response.data));
-    setOrderStatus(data.CurrentStatus.state);
+    setOrderStatus(data?.CurrentStatus.state);
   }, []);
 
   return (
