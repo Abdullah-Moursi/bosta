@@ -1,11 +1,12 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Track from "./components/Track";
+import History from "./components/History";
 
 function App() {
   return (
-    <Router>
+    <Router history={History}>
       <div className="App">
         <Switch>
           <Route path="/shipments/track/:trackingNumber" component={Track} />

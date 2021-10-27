@@ -6,24 +6,17 @@ import Container from "react-bootstrap/Container";
 import logo from "../../src/./assets/images/logo.png";
 
 import "../App.css";
-import { Link } from "react-router-dom";
+import History from "./History";
 
 const Header = () => {
-  const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("");
+  const [input, setInput] = useState("");
 
-  const getInput = (e) => {
-    setSearch(e.target.value);
-  };
-  const trackLink = `/shipments/track/${query}`;
-
-  const getQuery = (e) => {
+  const submitAction = (e) => {
     e.preventDefault();
-    setQuery(search);
-    setSearch("");
-
-    console.log(query);
+    History.push("/shipments/track/" + input);
+    setInput("");
   };
+
   return (
     <Navbar className="navbar" sticky="top" collapseOnSelect expand="lg">
       <Container id="container">
@@ -36,19 +29,20 @@ const Header = () => {
             </Nav.Link>
             <NavDropdown title="تتبع شحنتك" id="collasible-nav-dropdown">
               <h3>تتبع شحنتك</h3>
-              <form onSubmit={getQuery}>
-                <input
-                  required
-                  onChange={getInput}
-                  value={search}
-                  type="number"
-                  placeholder="تتبع شحنتك"
-                />
-                <li>
-                  <button href={trackLink} className="btn" type="submit">
-                    <Link to={trackLink}>ننبع</Link>
-                  </button>
-                </li>
+
+              <form onSubmit={submitAction}>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="ttb3"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                  />
+
+                  <div>
+                    <button type="submit">ttb3</button>
+                  </div>
+                </div>
               </form>
             </NavDropdown>
           </Nav>

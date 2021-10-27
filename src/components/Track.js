@@ -15,7 +15,7 @@ import Button from "@mui/material/Button";
 import Canceled from "../../src/./assets/images/canceled.png";
 import Delivered from "../../src/./assets/images/delivered.png";
 import Pending from "../../src/./assets/images/pending.png";
-import SquareLoader from "react-spinners/SquareLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Track = () => {
   const { trackingNumber } = useParams();
@@ -28,8 +28,9 @@ const Track = () => {
       .then((res) => {
         setData(res.data);
       });
+          //eslint-disable-next-line
   }, []);
-
+console.log(data)
   const orderStatus = data?.CurrentStatus.state;
   return (
     <div>
@@ -50,12 +51,12 @@ const Track = () => {
         >
           <Row>
             <Col xs={12} md={12}>
-              <SquareLoader color={"red"} loading={true} size={130} />
+              <BeatLoader color={"red"} loading={true} size={15} />
             </Col>
             <Col style={{
               marginTop:"1%"
             }} xs={12} md={12}>
-              <h4>Please make sure you entered a valid order number :)</h4>
+              <h5>Please make sure you entered a valid order number :)</h5>
             </Col>
           </Row>
         </Container>

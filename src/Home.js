@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <li>
-        <Link to="/shipments/track/">track</Link>
+        <Link to="/shipments/track/:trackingNumber">track</Link>
       </li>
       <Header />
       <Hero />
