@@ -19,15 +19,20 @@ const Header = () => {
 
   return (
     <Navbar className="navbar" sticky="top" collapseOnSelect expand="lg">
-      <Container id="container">
+      <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link id="lang">ENG</Nav.Link>
+            <Nav.Link className="me-auto" id="lang">ENG</Nav.Link>
             <Nav.Link id="linkItem" href="https://business.bosta.co/signin">
               تسجيل الدخول
             </Nav.Link>
-            <NavDropdown title="تتبع شحنتك" id="collasible-nav-dropdown">
+            <NavDropdown
+              style={{ borderLeft: "solid 1px", borderColor: "gray" }}
+              title="تتبع شحنتك"
+              id="collasible-nav-dropdown"
+            >
               <h3>تتبع شحنتك</h3>
 
               <form onSubmit={submitAction}>
@@ -60,7 +65,7 @@ const Header = () => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Navbar.Brand id="homeLogo" href="#home">
+        <Navbar.Brand  id="homeLogo" href="#home">
           بوسطة
           <span>
             <img className="navLogo" src={logo} alt="logo" />

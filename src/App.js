@@ -1,7 +1,7 @@
 import "./App.css";
-import { Router, Switch, Route, Link } from "react-router-dom";
-import Home from "./Home";
-import Track from "./components/Track";
+import { Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Track from "./pages/Track";
 import History from "./components/History";
 
 function App() {
