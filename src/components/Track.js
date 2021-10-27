@@ -23,9 +23,8 @@ const Track = () => {
     axios
       .get("https://tracking.bosta.co/shipments/track/9442984")
       .then((response) => setData(response.data));
-    setOrderStatus(data.CurrentStatus.state);
+    // setOrderStatus(data.CurrentStatus.state);
   }, []);
-  console.log(data);
 
   return (
     <div>
@@ -55,16 +54,16 @@ const Track = () => {
             <h6> 6545465 رقم الشحنة</h6>
             <h5
               id={
-                orderStatus === "DELIVERED"
+                data.CurrentStatus.state === "DELIVERED"
                   ? "green"
-                  : orderStatus === "DELIVERED_TO_SENDER"
+                  : data.CurrentStatus.state === "DELIVERED_TO_SENDER"
                   ? "red"
                   : "yellow"
               }
             >
-              {orderStatus === "DELIVERED"
+              {data.CurrentStatus.state === "DELIVERED"
                 ? "تم تسليم الشحنة"
-                : orderStatus === "DELIVERED_TO_SENDER"
+                : data.CurrentStatus.state === "DELIVERED_TO_SENDER"
                 ? "تم إلغاء الشحنة"
                 : "لم يتم تسليم الشحنة"}
             </h5>
@@ -80,9 +79,9 @@ const Track = () => {
           <Row style={{ justifyContent: "center" }}>
             <Image
               src={
-                orderStatus === "DELIVERED"
+                data.CurrentStatus.state === "DELIVERED"
                   ? Delivered
-                  : orderStatus === "DELIVERED_TO_SENDER"
+                  : data.CurrentStatus.state === "DELIVERED_TO_SENDER"
                   ? Canceled
                   : Pending
               }
@@ -94,16 +93,16 @@ const Track = () => {
 
             <p
               id={
-                orderStatus === "DELIVERED"
+                data.CurrentStatus.state === "DELIVERED"
                   ? "green"
-                  : orderStatus === "DELIVERED_TO_SENDER"
+                  : data.CurrentStatus.state === "DELIVERED_TO_SENDER"
                   ? "red"
                   : "yellow"
               }
             >
-              {orderStatus === "DELIVERED"
+              {data.CurrentStatus.state === "DELIVERED"
                 ? `space`
-                : orderStatus === "DELIVERED_TO_SENDER"
+                : data.CurrentStatus.state === "DELIVERED_TO_SENDER"
                 ? "تم إلغاء الشحنة من التاجر"
                 : "العميل غير متواجد في العنوان"}
             </p>
@@ -186,16 +185,16 @@ const Track = () => {
                 <tr>
                   <td
                     id={
-                      orderStatus === "DELIVERED"
+                      data.CurrentStatus.state === "DELIVERED"
                         ? "green"
-                        : orderStatus === "DELIVERED_TO_SENDER"
+                        : data.CurrentStatus.state === "DELIVERED_TO_SENDER"
                         ? "red"
                         : "yellow"
                     }
                   >
-                    {orderStatus === "DELIVERED"
+                    {data.CurrentStatus.state === "DELIVERED"
                       ? `تم التسليم`
-                      : orderStatus === "DELIVERED_TO_SENDER"
+                      : data.CurrentStatus.state === "DELIVERED_TO_SENDER"
                       ? "تم إلغاء الشحنة من التاجر"
                       : "العميل غير متواجد في العنوان"}
                   </td>
