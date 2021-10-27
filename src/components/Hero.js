@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import header from "../../src/header.jpg";
+import header from "../../src/./assets/images/header.jpg";
 import Card from "react-bootstrap/Card";
 import Button from "@mui/material/Button";
 

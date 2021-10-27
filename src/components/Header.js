@@ -3,9 +3,10 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../../src/logo.png";
+import logo from "../../src/./assets/images/logo.png";
 
 import "../App.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [search, setSearch] = useState("");
@@ -14,12 +15,14 @@ const Header = () => {
   const getInput = (e) => {
     setSearch(e.target.value);
   };
-
+  const trackLink = `/shipments/track/${query}`;
 
   const getQuery = (e) => {
     e.preventDefault();
     setQuery(search);
     setSearch("");
+
+    console.log(query);
   };
   return (
     <Navbar className="navbar" sticky="top" collapseOnSelect expand="lg">
@@ -42,8 +45,8 @@ const Header = () => {
                   placeholder="تتبع شحنتك"
                 />
                 <li>
-                  <button className="btn" type="submit">
-                    ننبع
+                  <button href={trackLink} className="btn" type="submit">
+                    <Link to={trackLink}>ننبع</Link>
                   </button>
                 </li>
               </form>

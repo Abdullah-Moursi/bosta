@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import logo from "../../src/logo.png";
+import logo from "../../src/./assets/images/logo.png";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaTwitterSquare } from "react-icons/fa";
 

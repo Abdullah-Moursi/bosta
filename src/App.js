@@ -5,15 +5,11 @@ import Track from "./components/Track";
 
 function App() {
   return (
-    <Router> 
-      <div className="App">    
+    <Router>
+      <div className="App">
         <Switch>
-          <Route path="/shipments/track/">
-            <Track />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/shipments/track/:trackingNumber" component={Track} />
+          <Route path="/" component={Home} />
         </Switch>
       </div>
     </Router>
