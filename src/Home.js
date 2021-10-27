@@ -7,9 +7,6 @@ import Hero from "./components/Hero";
 const Home = () => {
   return (
     <div>
-      <li>
-        <Link to="/shipments/track/:trackingNumber">track</Link>
-      </li>
       <Header />
       <Hero />
       <Footer />
