@@ -98,7 +98,7 @@ const Track = () => {
             <Container>
               <Row>
                 <Address />
-                <TableData orderStatus={orderStatus} />
+                <TableData TransitEventsStates={TransitEventsStates} orderStatus={orderStatus} />
               </Row>
             </Container>
           </div>
