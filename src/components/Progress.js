@@ -10,11 +10,13 @@ import Image from "react-bootstrap/Image";
 const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
   return (
     <Container style={{ marginTop: "4%", marginBottom: "2%" }}>
-      <Row style={{ border: "solid 1px", borderColor: "grey" }}>
+      <Row style={{ border: "solid 1px", borderColor: "grey", paddingTop:"2%"}}>
         <Col>
           {" "}
           <h6> موعد التسليم خلال</h6>
-          <h5>{CurrentStatus}</h5>
+          <h5>
+            <span>2020</span> <span>3</span> {"يتليت"}
+          </h5>
         </Col>
         <Col>
           {" "}
@@ -24,7 +26,7 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
         <Col>
           {" "}
           <h6> آخر تحديث </h6>
-          <h5>الاثنين 12\5\2019 5am </h5>
+          <h5>{CurrentStatus}</h5>
         </Col>
         <Col>
           {" "}
@@ -67,8 +69,8 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
         <Col>تم التسليم</Col>
         <Col>
           <h6>الشحنة خرجت للتسليم</h6>
-
           <p
+            style={{ paddingBottom: "2%" }}
             id={
               orderStatus === "DELIVERED"
                 ? "green"
@@ -78,7 +80,7 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
             }
           >
             {orderStatus === "DELIVERED"
-              ? `space`
+              ? ""
               : orderStatus === "DELIVERED_TO_SENDER"
               ? "تم إلغاء الشحنة من التاجر"
               : orderStatus === "TICKET_CREATED" &&

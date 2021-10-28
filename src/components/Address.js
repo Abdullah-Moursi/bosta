@@ -4,8 +4,9 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
+import question from "../assets/images/question.png"
 
-const Address = ({ question }) => {
+const Address = () => {
   return (
     <Col sm={4}>
       {" "}

@@ -9,7 +9,6 @@ const InvalidTrack = () => {
             <Header />
             <NotValid />
             <Footer />
-            
         </div>
     )
 }

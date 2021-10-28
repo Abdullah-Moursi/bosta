@@ -9,7 +9,6 @@ import TableData from "../components/TableData";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
 import BeatLoader from "react-spinners/BeatLoader";
 import Progress from "../components/Progress";
 import Address from "../components/Address";
