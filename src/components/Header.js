@@ -8,9 +8,9 @@ import { BiSearch } from "react-icons/bi";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-
 import "../App.css";
 import History from "./History";
+import Form from "./Form";
 
 const Header = () => {
   const [input, setInput] = useState("");
@@ -35,40 +35,16 @@ const Header = () => {
               تسجيل الدخول
             </Nav.Link>
             <NavDropdown
-              style={{ borderLeft: "solid 1px", borderColor: "gray" }}
+              style={{ borderLeft: "solid 1px", borderColor: "gray"}}
               title="تتبع شحنتك"
               id="collasible-nav-dropdown"
             >
               <h2 style={{ color: "red", fontWeight: "600" }}>تتبع شحنتك</h2>
               <p>اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
               <form onSubmit={submitAction}>
-                                <Container>
-                  <Row>
-                  <Col sm={2}>
-                  <button
-                    style={{
-                      borderRadius: "50%",
-                      backgroundColor: "red",
-                      color: "white",
-                      border: "none",
-                      fontSize: "120%",
-                    }}
-                    type="submit"
-                  >
-                    <BiSearch />
-                  </button>
-                  </Col>
-                  <Col sm={10}>
-                  <input
-                    type="number"
-                    placeholder="رقم الشحنة"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                  />
-                  </Col>
-                  </Row>
+                <Container>
+                  <Form input={input} setInput={setInput} />
                 </Container>
-  
               </form>
             </NavDropdown>
           </Nav>

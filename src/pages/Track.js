@@ -41,6 +41,9 @@ const Track = () => {
 
   return (
     <div>
+           <li>
+        <Link to="/shipments/track/invalid/:trackingNumber">invalid</Link>
+      </li>
       <li>
         <Link to="/">home</Link>
       </li>
