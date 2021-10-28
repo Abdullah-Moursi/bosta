@@ -4,9 +4,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../../src/./assets/images/logo.png";
-import { BiSearch } from "react-icons/bi";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 import "../App.css";
 import History from "./History";
