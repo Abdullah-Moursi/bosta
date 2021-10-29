@@ -5,10 +5,9 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { useTranslation } from "react-i18next";
 
-
 i18n.use(initReactI18next).init({
   resources: {
-    en: { 
+    en: {
       translation: {
         TICKET_CREATED: "تم إنشاء التذكرة",
         PACKAGE_RECEIVED: "تم إستلام الشحنة من التاجر",
@@ -52,7 +51,7 @@ const TableData = ({ orderStatus, TransitEventsStates }) => {
         </thead>
         <tbody>
           {TransitEventsStates.map((el) => (
-            <tr>
+            <tr key={el.timestamp}>
               <td>
                 {t(`${el.state}`)}
 
@@ -71,7 +70,9 @@ const TableData = ({ orderStatus, TransitEventsStates }) => {
               <td>
                 {el.timestamp.split("T").pop().slice(0, -8)}
 
-                {el.timestamp.split("T").pop().slice(0, -11) > 11 ? `${' '}pm` : `${' '}am`}
+                {el.timestamp.split("T").pop().slice(0, -11) > 11
+                  ? `${" "}pm`
+                  : `${" "}am`}
               </td>
               <td> {el.timestamp.split("T", 1)}</td>
               <td>{el.hub && t(`${el.hub}`)}</td>

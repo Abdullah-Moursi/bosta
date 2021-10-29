@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TableData from "../components/TableData";
@@ -40,12 +39,9 @@ const Track = () => {
 
   return (
     <div>
-           <li>
+      {/* <li>
         <Link to="/shipments/track/invalid/:trackingNumber">invalid</Link>
-      </li>
-      <li>
-        <Link to="/">home</Link>
-      </li>
+      </li> */}
       <Header />
       {err && (
         <Container
@@ -56,13 +52,7 @@ const Track = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-        >
-          <Row>
-            <Col>
-              <h3>Please make sure you entered a valid order number :)</h3>
-            </Col>
-          </Row>
-        </Container>
+        ></Container>
       )}
       {!data && !err ? (
         <Container
@@ -100,7 +90,11 @@ const Track = () => {
             <Container>
               <Row>
                 <Address />
-                <TableData TransitEventsStates={TransitEventsStates} orderStatus={orderStatus} />
+                <TableData
+                  trackingNumber={trackingNumber}
+                  TransitEventsStates={TransitEventsStates}
+                  orderStatus={orderStatus}
+                />
               </Row>
             </Container>
           </div>

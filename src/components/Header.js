@@ -15,6 +15,7 @@ const Header = () => {
   const submitAction = (e) => {
     e.preventDefault();
     History.push("/shipments/track/" + input);
+    console.log(History);
     setInput("");
   };
 
@@ -32,17 +33,18 @@ const Header = () => {
               تسجيل الدخول
             </Nav.Link>
             <NavDropdown
-              style={{ borderLeft: "solid 1px", borderColor: "gray"}}
+              style={{ borderLeft: "solid 1px", borderColor: "gray" }}
               title="تتبع شحنتك"
               id="collasible-nav-dropdown"
             >
               <h2 style={{ color: "red", fontWeight: "600" }}>تتبع شحنتك</h2>
               <p>اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
-              <form onSubmit={submitAction}>
-                <Container>
-                  <Form input={input} setInput={setInput} />
-                </Container>
-              </form>
+
+              <Form
+                input={input}
+                setInput={setInput}
+                submitAction={submitAction}
+              />
             </NavDropdown>
           </Nav>
           <Nav>
@@ -54,12 +56,12 @@ const Header = () => {
               {" "}
               الأسعار
             </Nav.Link>
-            <Nav.Link id="linkItem" href="https://bosta.co/ar/">
+            <Nav.Link id="linkItem" href="/">
               الرئيسية
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Navbar.Brand id="homeLogo" href="#home">
+        <Navbar.Brand id="homeLogo" href="/">
           بوسطة
           <span>
             <img className="navLogo" src={logo} alt="logo" />

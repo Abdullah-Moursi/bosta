@@ -1,16 +1,21 @@
 import React from "react";
 import Canceled from "../../src/./assets/images/canceled.png";
 import Delivered from "../../src/./assets/images/delivered.png";
-import Pending from "../../src/./assets/images/pending.png";
+import yellowCar from "../../src/./assets/images/yellowCar.png";
+import redCar from "../../src/./assets/images/redCar.png";
+import done from "../../src/./assets/images/done.png";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import { ProgressBar, Step } from "react-step-progress-bar";
 
 const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
   return (
     <Container style={{ marginTop: "4%", marginBottom: "2%" }}>
-      <Row style={{ border: "solid 1px", borderColor: "grey", paddingTop:"2%"}}>
+      <Row
+        style={{ border: "solid 1px", borderColor: "grey", paddingTop: "2%" }}
+      >
         <Col>
           {" "}
           <h6> موعد التسليم خلال</h6>
@@ -56,7 +61,84 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
         }}
       >
         <Row style={{ justifyContent: "center" }}>
-          <Image
+          <ProgressBar
+            percent={
+              orderStatus === "DELIVERED"
+                ? 100
+                : orderStatus === "DELIVERED_TO_SENDER"
+                ? 100
+                : orderStatus === "TICKET_CREATED" && 100
+            }
+            filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
+          >
+            <Step transition="scale">
+              {({ accomplished }) => (
+                <img
+                  alt={"imgStatus"}
+                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  width="30"
+                  src={
+                    orderStatus === "DELIVERED"
+                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
+                      : (orderStatus === "DELIVERED_TO_SENDER" ||
+                        orderStatus === "TICKET_CREATED") && done 
+                  }
+                />
+              )}
+            </Step>
+            <Step transition="scale">
+              {({ accomplished }) => (
+                <img
+                  alt={"imgStatus"}
+                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  width="30"
+                  src={
+                    orderStatus === "DELIVERED"
+                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
+                      : orderStatus === "DELIVERED_TO_SENDER"
+                      ? redCar
+                      : orderStatus === "TICKET_CREATED" && yellowCar
+                  }
+                />
+              )}
+            </Step>
+            <Step transition="scale">
+              {({ accomplished }) => (
+                <img
+                  alt={"imgStatus"}
+                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  width="30"
+                  src={
+                    orderStatus === "DELIVERED"
+                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
+                      : orderStatus === "DELIVERED_TO_SENDER"
+                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Eo_circle_red_white_checkmark.svg/1024px-Eo_circle_red_white_checkmark.svg.png"
+                      : orderStatus === "TICKET_CREATED" &&
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Eo_circle_yellow_white_checkmark.svg/1024px-Eo_circle_yellow_white_checkmark.svg.png"
+                  }
+                />
+              )}
+            </Step>
+            <Step transition="scale">
+              {({ accomplished }) => (
+                <img
+                  alt={"imgStatus"}
+                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  width="30"
+                  src={
+                    orderStatus === "DELIVERED"
+                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
+                      : orderStatus === "DELIVERED_TO_SENDER"
+                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Eo_circle_red_white_checkmark.svg/1024px-Eo_circle_red_white_checkmark.svg.png"
+                      : orderStatus === "TICKET_CREATED" &&
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Eo_circle_yellow_white_checkmark.svg/1024px-Eo_circle_yellow_white_checkmark.svg.png"
+                  }
+                />
+              )}
+            </Step>
+          </ProgressBar>
+
+          {/* <Image
             src={
               orderStatus === "DELIVERED"
                 ? Delivered
@@ -64,7 +146,7 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
                 ? Canceled
                 : orderStatus === "TICKET_CREATED" && Pending
             }
-          />
+          /> */}
         </Row>
         <Col>تم التسليم</Col>
         <Col>
