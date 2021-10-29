@@ -3,13 +3,12 @@ import { Col, Row, Container } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
 import History from "utils/History";
 
-const Form = ({ setdropDownOpen }) => {
+const Form = () => {
   const [query, setQuery] = useState("")
 
   const submitAction = (e) => {
     e.preventDefault();
     History.push(`/shipments/track/${query}`);
-    // setdropDownOpen(!dropDownOpen);
     setQuery("");
   };
 

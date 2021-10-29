@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavDropdown, Navbar, Nav, Container } from "react-bootstrap";
 import Form from "components/Form";
 import logo from "assets/images/logo.png";
 
 const Header = () => {
-  const [dropDownOpen, setdropDownOpen] = useState(false);
-
   return (
     <Navbar className="navbar" sticky="top" collapseOnSelect expand="lg">
       <Container>
@@ -22,18 +20,11 @@ const Header = () => {
               style={{ borderLeft: "solid 1px", borderColor: "gray" }}
               title="تتبع شحنتك"
               id="collasible-nav-dropdown"
-              show={dropDownOpen}
-              onClick={() => {
-                setdropDownOpen(true);
-              }}
             >
               <div style={{ textAlign: "right", padding: "1% 7%" }}>
                 <h2 style={{ color: "red", fontWeight: "600" }}>تتبع شحنتك</h2>
                 <p> اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
-                <Form
-                  dropDownOpen={dropDownOpen}
-                  setdropDownOpen={setdropDownOpen}
-                />
+                <Form />
               </div>
             </NavDropdown>
           </Nav>
