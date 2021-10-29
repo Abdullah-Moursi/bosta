@@ -24,7 +24,7 @@ const Form = ({ query, setQuery, submitAction }) => (
           <input
             style={{ textAlign: "right" }}
             type="number"
-            placeholder=" الشحنة"
+            placeholder="رقم الشحنة"
             value={query}
             required
             onChange={(e) => setQuery(e.target.value)}
