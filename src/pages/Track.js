@@ -6,7 +6,7 @@ import BeatLoader from "react-spinners/BeatLoader";
 import TableData from "components/TableData";
 import Progress from "components/Progress";
 import Address from "components/Address";
-import InvalidTrack from "./InvalidTrack";
+import InvalidTrack from "pages/InvalidTrack";
 
 const BASE_URL = "https://tracking.bosta.co/shipments/track/";
 
@@ -15,7 +15,7 @@ const Track = () => {
 
   const [data, setData] = useState(null);
   const [err, setErr] = useState(false);
-
+  
   const fetchTrackingData = async () => {
     await axios
       .get(`${BASE_URL}${trackingNumber}`)
@@ -42,8 +42,9 @@ const Track = () => {
             alignItems: "center",
           }}
         >
-          <InvalidTrack />
-        </Container>
+<InvalidTrack />
+
+   </Container>
       )}
       {!data && !err ? (
         <Container

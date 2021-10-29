@@ -40,8 +40,8 @@ const Header = () => {
                 <h2 style={{ color: "red", fontWeight: "600" }}>تتبع شحنتك</h2>
                 <p> اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
                 <Form
-                  query={query}
-                  setQuery={setQuery}
+                  query={ query!== '' && query}
+                  setQuery={ setQuery !== '' && setQuery}
                   submitAction={submitAction}
                 />
               </div>

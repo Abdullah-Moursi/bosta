@@ -2,8 +2,8 @@ import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Form from "components/Form";
 
-const InvalidTrack = () => {
-  return (
+const InvalidTrack = () =>  (
+  
     <Container
       style={{
         margin: "5% auto",
@@ -24,6 +24,6 @@ const InvalidTrack = () => {
       </Row>
     </Container>
   );
-};
+
 
 export default InvalidTrack;

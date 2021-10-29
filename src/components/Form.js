@@ -2,7 +2,12 @@ import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
 
-const Form = ({ query, setQuery, submitAction }) => (
+
+const Form = ({ query, setQuery, submitAction }) => { 
+  
+    console.log(query)
+
+  return (
   <form onSubmit={submitAction}>
     <Container>
       <Row>
@@ -33,6 +38,6 @@ const Form = ({ query, setQuery, submitAction }) => (
       </Row>
     </Container>
   </form>
-);
+)};
 
 export default Form;

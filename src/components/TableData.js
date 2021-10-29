@@ -14,6 +14,7 @@ i18n.use(initReactI18next).init({
         IN_TRANSIT: "جاري الشحن",
         OUT_FOR_DELIVERY: "الشحنة خرجت للتسليم",
         RECEIVED_DELIVERY_LOCATION: "تم إستلام مكان التسليم",
+        DELIVERY_FAILED: "فشل التوصيل",
         DELIVERED: "تم التسليم",
         "Alexandria Hub": "الأسكندرية",
         "Katamya Hub": "القطامية",
