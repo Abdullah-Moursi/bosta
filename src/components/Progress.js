@@ -10,17 +10,15 @@ import done from "assets/images/done.png";
 import Timestamp from "react-timestamp";
 
 const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
-
   return (
     <Container style={{ marginTop: "4%", marginBottom: "2%" }}>
       <Row
         style={{ border: "solid 1px", borderColor: "grey", paddingTop: "2%" }}
       >
         <Col>
-          {" "}
           <h6> موعد التسليم خلال</h6>
-          <h5>
-            <span>2020</span> <span>3</span> <span>يناير</span>
+          <h5 id="subtytleDate" style={{ display: "flex"}}>
+            <span>2020</span> <span>يناير</span> <span>3</span>
           </h5>
         </Col>
         <Col>
@@ -32,9 +30,13 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
           {" "}
           <h6> آخر تحديث </h6>
           <h5>
-            {CurrentStatus}
-            {/* {<Timestamp date={CurrentStatus} options={{ includeDay: true }} />} */}
-            </h5>
+            {
+              <Timestamp
+                date={CurrentStatus}
+                options={{ includeDay: true, twentyFourHour: true }}
+              />
+            }
+          </h5>
         </Col>
         <Col>
           {" "}
@@ -63,7 +65,7 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
           borderColor: "grey",
         }}
       >
-        <Row style={{ padding: "2% 5%", transform: "rotate(180deg)" }}>
+        <Row style={{ padding: "2% 5% ", transform: "rotate(180deg)" }}>
           <ProgressBar
             stepPositions={[0, 33, 66, 100]}
             percent={

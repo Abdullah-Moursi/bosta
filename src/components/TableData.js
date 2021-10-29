@@ -71,7 +71,6 @@ const TableData = ({ orderStatus, TransitEventsStates }) => {
               </td>
               <td>
                 {el.timestamp.split("T").pop().slice(0, -8)}
-
                 {el.timestamp.split("T").pop().slice(0, -11) > 11
                   ? `${" "}pm`
                   : `${" "}am`}

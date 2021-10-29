@@ -20,6 +20,7 @@ const Address = () => {
             </p>
           </Col>
         </Row>
+
         <Row style={{ marginTop: "2%", border: "solid gray 1px" }}>
           <Col sm={8}>
             <h5>هل يوجد مشكلة في شحنتك؟</h5>
