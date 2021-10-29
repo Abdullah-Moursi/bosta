@@ -1,19 +1,10 @@
 import React, { useState } from "react";
 import { NavDropdown, Navbar, Nav, Container } from "react-bootstrap";
-import History from "utils/History";
 import Form from "components/Form";
 import logo from "assets/images/logo.png";
 
 const Header = () => {
   const [dropDownOpen, setdropDownOpen] = useState(false);
-  const [query, setQuery] = useState("");
-
-  const submitAction = (e) => {
-    e.preventDefault();
-    History.push(`/shipments/track/${query}`);
-    setdropDownOpen(false);
-    setQuery("");
-  };
 
   return (
     <Navbar className="navbar" sticky="top" collapseOnSelect expand="lg">
@@ -40,9 +31,8 @@ const Header = () => {
                 <h2 style={{ color: "red", fontWeight: "600" }}>تتبع شحنتك</h2>
                 <p> اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
                 <Form
-                  query={query}
-                  setQuery={setQuery}
-                  submitAction={submitAction}
+                  dropDownOpen={dropDownOpen}
+                  setdropDownOpen={setdropDownOpen}
                 />
               </div>
             </NavDropdown>
