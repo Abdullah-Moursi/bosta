@@ -2,6 +2,10 @@ import React from "react";
 
 import yellowCar from "../../src/./assets/images/yellowCar.png";
 import redCar from "../../src/./assets/images/redCar.png";
+import greencheck from "../../src/./assets/images/greencheck.png";
+import yellowcheck from "../../src/./assets/images/yellowcheck.png";
+import redcheck from "../../src/./assets/images/redcheck.png";
+
 import done from "../../src/./assets/images/done.png";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -58,91 +62,17 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
           borderColor: "grey",
         }}
       >
-        <Row style={{ justifyContent: "center" }}>
+        <Row style={{ padding: "2% 5%", transform: "rotate(180deg)" }}>
           <ProgressBar
+            stepPositions={[0, 33, 66, 100]}
             percent={
               orderStatus === "DELIVERED"
                 ? 100
                 : orderStatus === "DELIVERED_TO_SENDER"
-                ? 100
-                : orderStatus === "TICKET_CREATED" && 100
+                ? 66
+                : orderStatus === "TICKET_CREATED" && 66
             }
-            filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
-          >
-            <Step transition="scale">
-              {({ accomplished }) => (
-                <img
-                  alt={"imgStatus"}
-                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-                  width="30"
-                  src={
-                    orderStatus === "DELIVERED"
-                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
-                      : (orderStatus === "DELIVERED_TO_SENDER" ||
-                          orderStatus === "TICKET_CREATED") &&
-                        done
-                  }
-                />
-              )}
-            </Step>
-            <Step transition="scale">
-              {({ accomplished }) => (
-                <img
-                  alt={"imgStatus"}
-                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-                  width="30"
-                  src={
-                    orderStatus === "DELIVERED"
-                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
-                      : orderStatus === "DELIVERED_TO_SENDER"
-                      ? redCar
-                      : orderStatus === "TICKET_CREATED" && yellowCar
-                  }
-                />
-              )}
-            </Step>
-            <Step transition="scale">
-              {({ accomplished }) => (
-                <img
-                  alt={"imgStatus"}
-                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-                  width="30"
-                  src={
-                    orderStatus === "DELIVERED"
-                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
-                      : orderStatus === "DELIVERED_TO_SENDER"
-                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Eo_circle_red_white_checkmark.svg/1024px-Eo_circle_red_white_checkmark.svg.png"
-                      : orderStatus === "TICKET_CREATED" &&
-                        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Eo_circle_yellow_white_checkmark.svg/1024px-Eo_circle_yellow_white_checkmark.svg.png"
-                  }
-                />
-              )}
-            </Step>
-            <Step transition="scale">
-              {({ accomplished }) => (
-                <img
-                  alt={"imgStatus"}
-                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-                  width="30"
-                  src={
-                    orderStatus === "DELIVERED"
-                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
-                      : orderStatus === "DELIVERED_TO_SENDER"
-                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Eo_circle_red_white_checkmark.svg/1024px-Eo_circle_red_white_checkmark.svg.png"
-                      : orderStatus === "TICKET_CREATED" &&
-                        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Eo_circle_yellow_white_checkmark.svg/1024px-Eo_circle_yellow_white_checkmark.svg.png"
-                  }
-                />
-              )}
-            </Step>
-          </ProgressBar>
-        </Row>
-        <Col>تم التسليم</Col>
-        <Col>
-          <h6>الشحنة خرجت للتسليم</h6>
-          <p
-            style={{ paddingBottom: "2%" }}
-            id={
+            filledBackground={
               orderStatus === "DELIVERED"
                 ? "green"
                 : orderStatus === "DELIVERED_TO_SENDER"
@@ -150,16 +80,100 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
                 : orderStatus === "TICKET_CREATED" && "yellow"
             }
           >
-            {orderStatus === "DELIVERED"
-              ? ""
-              : orderStatus === "DELIVERED_TO_SENDER"
-              ? "تم إلغاء الشحنة من التاجر"
-              : orderStatus === "TICKET_CREATED" &&
-                "العميل غير متواجد في العنوان"}
-          </p>
-        </Col>
-        <Col>تم إستلام الشحنة من التاجر</Col>
-        <Col>تم إنشاء الشحنة</Col>
+           
+
+          
+            <Step transition="scale">
+              {({ accomplished }) => (
+                <img
+                  alt={"imgStatus"}
+                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  width="30"
+                  src={
+                    orderStatus === "DELIVERED"
+                      ? greencheck
+                      : orderStatus === "DELIVERED_TO_SENDER"
+                      ? redcheck
+                      : orderStatus === "TICKET_CREATED" && yellowcheck
+                  }
+                />
+              )}
+            </Step>
+            <Step transition="scale">
+              {({ accomplished }) => (
+                <img
+                  alt={"imgStatus"}
+                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  width="30"
+                  src={
+                    orderStatus === "DELIVERED"
+                      ? greencheck
+                      : orderStatus === "DELIVERED_TO_SENDER"
+                      ? redcheck
+                      : orderStatus === "TICKET_CREATED" && yellowcheck
+                  }
+                />
+              )}
+            </Step> 
+             <Step transition="scale">
+              {({ accomplished }) => (
+                <img
+                  alt={"imgStatus"}
+                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  width="30"
+                  src={
+                    orderStatus === "DELIVERED"
+                      ? greencheck
+                      : orderStatus === "DELIVERED_TO_SENDER"
+                      ? redCar
+                      : orderStatus === "TICKET_CREATED" && yellowCar
+                  }
+                />
+              )}
+            </Step>
+             <Step transition="scale">
+              {({ accomplished }) => (
+                <img
+                  alt={"imgStatus"}
+                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  width="30"
+                  src={
+                    orderStatus === "DELIVERED"
+                      ? greencheck
+                      : (orderStatus === "DELIVERED_TO_SENDER" ||
+                          orderStatus === "TICKET_CREATED") &&
+                        done
+                  }
+                />
+              )}
+            </Step>
+          </ProgressBar>
+        </Row>
+        <Row>
+          <Col style={{ textAlign: "left" }}>تم التسليم</Col>
+          <Col style={{ paddingRight: "12.3%" }}>
+            الشحنة خرجت للتسليم
+            <p
+              style={{ paddingBottom: "2%" }}
+              id={
+                orderStatus === "DELIVERED"
+                  ? "green"
+                  : orderStatus === "DELIVERED_TO_SENDER"
+                  ? "red"
+                  : orderStatus === "TICKET_CREATED" && "yellow"
+              }
+            >
+              {orderStatus === "DELIVERED"
+                ? ""
+                : orderStatus === "DELIVERED_TO_SENDER"
+                ? "تم إلغاء الشحنة من التاجر"
+                : orderStatus === "TICKET_CREATED" &&
+                  "العميل غير متواجد في العنوان"}
+            </p>
+          </Col>
+          <Col style={{ paddingRight: "6.5%" }}>تم إستلام الشحنة من التاجر</Col>
+          <Col>تم إنشاء الشحنة</Col>
+        </Row>
       </Row>
     </Container>
   );
