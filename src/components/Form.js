@@ -4,7 +4,7 @@ import { BiSearch } from "react-icons/bi";
 import History from "utils/History";
 
 const Form = ({ setdropDownOpen }) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("")
 
   const submitAction = (e) => {
     e.preventDefault();
