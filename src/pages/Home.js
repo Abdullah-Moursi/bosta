@@ -1,16 +1,11 @@
 import React from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Hero from "../components/Hero";
+import Hero from "components/Hero";
 
-const Home = () => {
-  return (
-    <div>
-      <Header />
-      <Hero />
-      <Footer />
-    </div>
-  );
-};
+const Home = () => (
+  <>
+    <Hero />
+    {/* other home sections go here */}
+  </>
+);
 
 export default Home;

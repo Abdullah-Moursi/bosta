@@ -1,48 +1,39 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "../App.css";
+import { Row, Col, Container } from "react-bootstrap";
 import { useParams } from "react-router";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import TableData from "../components/TableData";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
+import axios from "axios";
 import BeatLoader from "react-spinners/BeatLoader";
-import Progress from "../components/Progress";
-import Address from "../components/Address";
+import TableData from "components/TableData";
+import Progress from "components/Progress";
+import Address from "components/Address";
+
+const BASE_URL = "https://tracking.bosta.co/shipments/track/";
 
 const Track = () => {
   const { trackingNumber } = useParams();
 
-  const [err, setErr] = useState(false);
   const [data, setData] = useState(null);
+  const [err, setErr] = useState(false);
 
-  const fetch = async () => {
+  const fetchTrackingData = async () => {
     await axios
-      .get(`https://tracking.bosta.co/shipments/track/${trackingNumber}`)
+      .get(`${BASE_URL}${trackingNumber}`)
       .then((res) => {
-        // res.data.error === "Invalid tracking number!" && setErr(true);
-        console.log(res);
+        setErr(false);
         setData(res.data);
-        res.Status === 404 && setErr(true);
-      });
+      })
+      .catch((e) => setErr(true));
   };
 
   useEffect(() => {
-    fetch();
-    //eslint-disable-next-line
-  }, []);
-  const orderStatus = data?.CurrentStatus.state;
-  const CurrentStatus = data?.PromisedDate;
-  const TransitEventsStates = data?.TransitEvents.map((el) => el);
+    fetchTrackingData();
+  }, [trackingNumber]);
 
   return (
     <div>
       {/* <li>
         <Link to="/shipments/track/invalid/:trackingNumber">invalid</Link>
       </li> */}
-      <Header />
       {err && (
         <Container
           style={{
@@ -52,7 +43,9 @@ const Track = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-        ></Container>
+        >
+          ERROR
+        </Container>
       )}
       {!data && !err ? (
         <Container
@@ -83,24 +76,23 @@ const Track = () => {
         !err && (
           <div>
             <Progress
-              CurrentStatus={CurrentStatus}
               trackingNumber={trackingNumber}
-              orderStatus={orderStatus}
+              CurrentStatus={data?.PromisedDate}
+              orderStatus={data?.CurrentStatus.state}
             />
             <Container>
               <Row>
                 <Address />
                 <TableData
                   trackingNumber={trackingNumber}
-                  TransitEventsStates={TransitEventsStates}
-                  orderStatus={orderStatus}
+                  TransitEventsStates={data?.TransitEvents}
+                  orderStatus={data?.CurrentStatus.state}
                 />
               </Row>
             </Container>
           </div>
         )
       )}
-      <Footer />
     </div>
   );
 };

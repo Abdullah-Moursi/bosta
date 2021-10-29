@@ -1,15 +1,10 @@
 import React from "react";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
-import question from "../assets/images/question.png"
+import { Col, Row, Container, Button, Image } from "react-bootstrap";
+import question from "assets/images/question.png";
 
 const Address = () => {
   return (
     <Col sm={4}>
-      {" "}
       <h5>عنوان التسليم</h5>
       <Container fluid>
         <Row
@@ -41,7 +36,6 @@ const Address = () => {
             </Button>
           </Col>
           <Col sm={4}>
-            {" "}
             <Image src={question} />
           </Col>
         </Row>

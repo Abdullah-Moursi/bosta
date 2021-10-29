@@ -1,16 +1,12 @@
 import React from "react";
-
-import yellowCar from "../../src/./assets/images/yellowCar.png";
-import redCar from "../../src/./assets/images/redCar.png";
-import greencheck from "../../src/./assets/images/greencheck.png";
-import yellowcheck from "../../src/./assets/images/yellowcheck.png";
-import redcheck from "../../src/./assets/images/redcheck.png";
-
-import done from "../../src/./assets/images/done.png";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
+import { Row, Container, Col } from "react-bootstrap";
 import { ProgressBar, Step } from "react-step-progress-bar";
+import yellowCar from "assets/images/yellowCar.png";
+import redCar from "assets/images/redCar.png";
+import greencheck from "assets/images/greencheck.png";
+import yellowcheck from "assets/images/yellowcheck.png";
+import redcheck from "assets/images/redcheck.png";
+import done from "assets/images/done.png";
 
 const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
   return (
@@ -22,7 +18,7 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
           {" "}
           <h6> موعد التسليم خلال</h6>
           <h5>
-            <span>2020</span> <span>3</span> {"يتليت"}
+            <span>2020</span> <span>3</span> <span>يناير</span>
           </h5>
         </Col>
         <Col>

@@ -1,6 +1,5 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
-import Col from "react-bootstrap/Col";
+import { Table, Col } from "react-bootstrap";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { useTranslation } from "react-i18next";
