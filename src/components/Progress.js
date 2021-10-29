@@ -80,9 +80,6 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
                 : orderStatus === "TICKET_CREATED" && "yellow"
             }
           >
-           
-
-          
             <Step transition="scale">
               {({ accomplished }) => (
                 <img
@@ -114,8 +111,8 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
                   }
                 />
               )}
-            </Step> 
-             <Step transition="scale">
+            </Step>
+            <Step transition="scale">
               {({ accomplished }) => (
                 <img
                   alt={"imgStatus"}
@@ -131,7 +128,7 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
                 />
               )}
             </Step>
-             <Step transition="scale">
+            <Step transition="scale">
               {({ accomplished }) => (
                 <img
                   alt={"imgStatus"}

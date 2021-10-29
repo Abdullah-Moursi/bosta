@@ -37,14 +37,15 @@ const Header = () => {
               title="تتبع شحنتك"
               id="collasible-nav-dropdown"
             >
-              <h2 style={{ color: "red", fontWeight: "600" }}>تتبع شحنتك</h2>
-              <p>اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
-
-              <Form
-                input={input}
-                setInput={setInput}
-                submitAction={submitAction}
-              />
+              <div style={{ textAlign: "right", padding: "1% 7%" }}>
+                <h2 style={{ color: "red", fontWeight: "600" }}>تتبع شحنتك</h2>
+                <p> اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
+                <Form
+                  input={input}
+                  setInput={setInput}
+                  submitAction={submitAction}
+                />{" "}
+              </div>
             </NavDropdown>
           </Nav>
           <Nav>
