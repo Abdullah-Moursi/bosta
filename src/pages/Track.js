@@ -6,6 +6,7 @@ import BeatLoader from "react-spinners/BeatLoader";
 import TableData from "components/TableData";
 import Progress from "components/Progress";
 import Address from "components/Address";
+import InvalidTrack from "./InvalidTrack";
 
 const BASE_URL = "https://tracking.bosta.co/shipments/track/";
 
@@ -31,9 +32,6 @@ const Track = () => {
 
   return (
     <div>
-      {/* <li>
-        <Link to="/shipments/track/invalid/:trackingNumber">invalid</Link>
-      </li> */}
       {err && (
         <Container
           style={{
@@ -44,7 +42,7 @@ const Track = () => {
             alignItems: "center",
           }}
         >
-          ERROR
+          <InvalidTrack />
         </Container>
       )}
       {!data && !err ? (

@@ -43,8 +43,6 @@ const Footer = () => (
               <a href="https://bosta.co/ar/pricing/">التسعير</a>
             </li>
             <li className="list-unstyled">
-              {/* my link */}
-
               <a href="https://bosta.co/ar/tracking-shipment/">تتبع شحنتك</a>
             </li>
           </ul>

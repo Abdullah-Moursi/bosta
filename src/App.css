@@ -1,7 +1,9 @@
+* {
+  font-family: "Cairo", sans-serif;
+}
 .App {
   margin: 0;
   text-align: center;
-  font-family: "Cairo", sans-serif;
   line-height: 1.6;
   text-align: end;
 }
@@ -45,7 +47,8 @@
   font-weight: 700;
 }
 
-#linkItem:hover, #collasible-nav-dropdown:hover {
+#linkItem:hover,
+#collasible-nav-dropdown:hover {
   border-top: 2px solid red;
 }
 

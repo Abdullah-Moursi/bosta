@@ -23,6 +23,8 @@ i18n.use(initReactI18next).init({
         "Tanta Hub": "طنطا",
         WAITING_FOR_CUSTOMER_ACTION: "في إنتظار رد العميل",
         DELIVERED_TO_SENDER: "لم يتم تسليم الشحنة",
+        "El Obour Hub": "مقر العبور",
+        "Monufia Hub": "مقر المنوفية",
       },
     },
   },
