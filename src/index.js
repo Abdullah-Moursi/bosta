@@ -10,9 +10,8 @@ import "react-step-progress-bar/styles.css";
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+<React.Fragment>    <App />
+</React.Fragment>,
   document.getElementById('root')
 );
 
