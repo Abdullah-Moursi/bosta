@@ -1,13 +1,11 @@
 import React from "react";
-import Canceled from "../../src/./assets/images/canceled.png";
-import Delivered from "../../src/./assets/images/delivered.png";
+
 import yellowCar from "../../src/./assets/images/yellowCar.png";
 import redCar from "../../src/./assets/images/redCar.png";
 import done from "../../src/./assets/images/done.png";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import { ProgressBar, Step } from "react-step-progress-bar";
 
 const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
@@ -81,7 +79,8 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
                     orderStatus === "DELIVERED"
                       ? "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Eo_circle_light-green_white_checkmark.svg/2048px-Eo_circle_light-green_white_checkmark.svg.png"
                       : (orderStatus === "DELIVERED_TO_SENDER" ||
-                        orderStatus === "TICKET_CREATED") && done 
+                          orderStatus === "TICKET_CREATED") &&
+                        done
                   }
                 />
               )}
@@ -137,16 +136,6 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
               )}
             </Step>
           </ProgressBar>
-
-          {/* <Image
-            src={
-              orderStatus === "DELIVERED"
-                ? Delivered
-                : orderStatus === "DELIVERED_TO_SENDER"
-                ? Canceled
-                : orderStatus === "TICKET_CREATED" && Pending
-            }
-          /> */}
         </Row>
         <Col>تم التسليم</Col>
         <Col>
