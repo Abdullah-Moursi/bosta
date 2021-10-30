@@ -1,6 +1,7 @@
 * {
   font-family: "Cairo", sans-serif;
 }
+
 .App {
   margin: 0;
   text-align: center;
@@ -87,3 +88,4 @@
     padding-left: 35%;
   }
 }
+
