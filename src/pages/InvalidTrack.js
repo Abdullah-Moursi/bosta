@@ -1,28 +1,24 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
 import Form from "components/Form";
 
 const InvalidTrack = () =>  (
   
-    <Container
+    <div
       style={{
+        maxWidth:"400px",
         margin: "5% auto",
-        width: "30%",
         boxShadow: "0 1px 2px 1px black",
         padding: "2%",
         borderRadius: "5px",
+        textAlign:"right"
       }}
     >
-      <Row>
-        <Col>
-          <p>رقم الشحنة هذا غير صالح</p>
+          <p>رقم الشحنة هذا غير صحيح</p>
           <h3 style={{ color: "red", marginBottom: "5%", fontWeight: "600" }}>
             تتبع شحنة أخرى
           </h3>
           <Form />
-        </Col>
-      </Row>
-    </Container>
+    </div>
   );
 
 
