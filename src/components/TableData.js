@@ -3,6 +3,7 @@ import { Table, Col } from "react-bootstrap";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { useTranslation } from "react-i18next";
+import moment from "moment";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -69,13 +70,9 @@ const TableData = ({ orderStatus, TransitEventsStates }) => {
                   {el.reason}
                 </p>
               </td>
-              <td>
-                {el.timestamp.split("T").pop().slice(0, -8)}
-                {el.timestamp.split("T").pop().slice(0, -11) > 11
-                  ? `${" "}pm`
-                  : `${" "}am`}
-              </td>
-              <td> {el.timestamp.split("T", 1)}</td>
+              <td>{moment(el.timestamp).format(" h:mm a")}</td>
+
+              <td>{moment(el.timestamp).format("DD/MM/YYYY")}</td>
               <td>{el.hub && t(`${el.hub}`)}</td>
             </tr>
           ))}

@@ -7,9 +7,10 @@ import greencheck from "assets/images/greencheck.png";
 import yellowcheck from "assets/images/yellowcheck.png";
 import redcheck from "assets/images/redcheck.png";
 import done from "assets/images/done.png";
-import Timestamp from "react-timestamp";
+import moment from "moment";
 
 const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
+
   return (
     <Container style={{ marginTop: "4%", marginBottom: "2%" }}>
       <Row
@@ -31,10 +32,7 @@ const Progress = ({ CurrentStatus, trackingNumber, orderStatus }) => {
           <h6> آخر تحديث </h6>
           <h5>
             {
-              <Timestamp
-                date={CurrentStatus}
-                options={{ includeDay: true, twentyFourHour: true }}
-              />
+              moment(CurrentStatus).format("[at] mm:ss a DD/MM/YYYY dddd")
             }
           </h5>
         </Col>
