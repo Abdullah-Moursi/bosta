@@ -4,7 +4,6 @@ import question from "assets/images/question.png";
 
 const Address = () => {
   return (
-    
     <Col sm={4}>
       <h5>عنوان التسليم</h5>
       <Container fluid>
@@ -22,8 +21,8 @@ const Address = () => {
           </Col>
         </Row>
 
-        <Row style={{ marginTop: "2%", border: "solid gray 1px", padding:"5% 0"}}>
-          <Col md={6}>
+        <Row style={{ marginTop: "2%", border: "solid gray 1px" }}>
+          <Col sm={8}>
             <h5>هل يوجد مشكلة في شحنتك؟</h5>
             <Button
               id="homeButtons"
@@ -37,8 +36,8 @@ const Address = () => {
               إبلاغ عن مشكلة
             </Button>
           </Col>
-          <Col md={6}>
-            <Image  src={question} />
+          <Col sm={4}>
+            <Image src={question} />
           </Col>
         </Row>
       </Container>
