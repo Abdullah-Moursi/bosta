@@ -4,7 +4,6 @@ import Form from "components/Form";
 import logo from "assets/images/logo.png";
 
 const Header = () => {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   return (
     <Navbar className="navbar" sticky="top" collapseOnSelect expand="lg">
       <Container>
@@ -23,11 +22,9 @@ const Header = () => {
               id="collasible-nav-dropdown"
             >
               <div style={{ textAlign: "right", padding: "1% 7%" }}>
-                <h2 style={{ color: "red", fontWeight: "600" }}>
-                  {isFormSubmitted ? "!تتبع شحنة أخرى " : "تتبع شحنتك"}
-                </h2>
+                <h2 style={{ color: "red", fontWeight: "600" }}>تتبع شحنتك</h2>
                 <p> اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
-                <Form setIsFormSubmitted={setIsFormSubmitted} />
+                <Form />
               </div>
             </NavDropdown>
           </Nav>
