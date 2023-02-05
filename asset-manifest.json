@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/bosta/static/css/main.b788cc7d.css",
+    "main.js": "/bosta/static/js/main.49a6bd65.js",
+    "static/media/fa-solid-900.svg": "/bosta/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
+    "static/media/fa-brands-400.svg": "/bosta/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
+    "static/media/fa-solid-900.eot": "/bosta/static/media/fa-solid-900.9bbb245e67a133f6e486.eot",
+    "static/media/fa-solid-900.ttf": "/bosta/static/media/fa-solid-900.be9ee23c0c6390141475.ttf",
+    "static/media/fa-regular-400.svg": "/bosta/static/media/fa-regular-400.4689f52cc96215721344.svg",
+    "static/media/fa-brands-400.eot": "/bosta/static/media/fa-brands-400.23f19bb08961f37aaf69.eot",
+    "static/media/fa-brands-400.ttf": "/bosta/static/media/fa-brands-400.527940b104eb2ea366c8.ttf",
+    "static/media/greencheck.png": "/bosta/static/media/greencheck.1d7b0d68d1051341da2d.png",
+    "static/media/fa-solid-900.woff": "/bosta/static/media/fa-solid-900.eeccf4f66002c6f2ba24.woff",
+    "static/media/fa-brands-400.woff": "/bosta/static/media/fa-brands-400.2285773e6b4b172f07d9.woff",
+    "static/media/fa-solid-900.woff2": "/bosta/static/media/fa-solid-900.1551f4f60c37af51121f.woff2",
+    "static/media/fa-brands-400.woff2": "/bosta/static/media/fa-brands-400.d878b0a6a1144760244f.woff2",
+    "static/media/redcheck.png": "/bosta/static/media/redcheck.c7c402e8469c169c4678.png",
+    "static/media/header.jpg": "/bosta/static/media/header.e002762cfb543617e70d.jpg",
+    "static/media/yellowcheck.png": "/bosta/static/media/yellowcheck.23da222fee399c976182.png",
+    "static/media/done.png": "/bosta/static/media/done.7490165b28978a161615.png",
+    "static/media/redCar.png": "/bosta/static/media/redCar.511808025479bb750daa.png",
+    "static/media/fa-regular-400.eot": "/bosta/static/media/fa-regular-400.77206a6bb316fa0aded5.eot",
+    "static/media/fa-regular-400.ttf": "/bosta/static/media/fa-regular-400.491974d108fe4002b2aa.ttf",
+    "static/media/yellowCar.png": "/bosta/static/media/yellowCar.0dbc79b41291aad330b3.png",
+    "static/media/logo.png": "/bosta/static/media/logo.d514d8c39b13e24c9c19.png",
+    "static/media/fa-regular-400.woff": "/bosta/static/media/fa-regular-400.bb58e57c48a3e911f15f.woff",
+    "static/media/fa-regular-400.woff2": "/bosta/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
+    "index.html": "/bosta/index.html",
+    "static/media/arrow_left.svg": "/bosta/static/media/arrow_left.db6e2d88c7c35a775ce4.svg",
+    "static/media/arrow_right.svg": "/bosta/static/media/arrow_right.f7c6ac6d310d3b82f0a0.svg",
+    "main.b788cc7d.css.map": "/bosta/static/css/main.b788cc7d.css.map",
+    "main.49a6bd65.js.map": "/bosta/static/js/main.49a6bd65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b788cc7d.css",
+    "static/js/main.49a6bd65.js"
+  ]
+}
